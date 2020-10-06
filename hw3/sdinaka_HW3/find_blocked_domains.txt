@@ -1,0 +1,43 @@
+README(q4):
+
+What the program does:
+
+- display a table that displays:
+	1.current site(current_site)
+	2.total number of http_requests recieved for loading a page(total_no_of_sites)
+	3.total number of http requests blocked(no_sites_blocked)
+	4.domains of third party requests that are blocked(blocked_sites)
+
+
+How it does:
+
+- arguments are passed in command line, 
+		-har file 	
+		-current domain name
+- the har file as args is passed to main function
+	- counts the number of requests(total_no_of_sites)
+	- stores url's in domains list
+	- get mimetype and store in dictionary with key as url
+-readfiles() function 
+	- parses through easylist and appends each rule to raw_rules list
+-rules are created from raw_rules with supported options
+- for each url in domains list
+	-options are written using 'write_options()' function
+		set options for: script image, third party, domain and stylesheet
+	-check if url should be blocked using rules.should_block(url, options)
+	- if url needs to be blocked get_blocked_sites_domain()
+		-get_blocked_sites_domain() function adds the domain for given url to the blocked_sites set.
+ - finally the values are tabulated, using tabulate function
+
+How to run:
+pattern: [syntax] python file_name.py 'path_of_har_file' 'domain of site which is first party'
+
+1. python find_blocked_domains.py G:\Privacy\hw3\macys2.har macys.com
+
+2. python find_blocked_domains.py G:\Privacy\hw3\cnn2.har cnn.com
+
+3. python find_blocked_domains.py G:\Privacy\hw3\bofa.har bankofamerica.com
+
+
+
+
