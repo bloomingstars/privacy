@@ -1,0 +1,4 @@
+the inputs are already given, as per the question,
+ to edit the inputs, 
+change in the secondlast line where expr is declared.
+exec(open('warfarin.py').read()) would execute the first program
