@@ -1,0 +1,38 @@
+README(q3):
+
+What the program does:
+
+- display a list of third party domains from which html objects are loaded
+- show connectivity graph representing domains from which html objects are loaded
+ only domains are displayed.
+the sub-domains are covered under domains
+
+
+How it does:
+
+- arguments are passed in command line, 
+		-har file 	
+		-current domain name
+-theses args are passed to main function
+- first node, the root node is current domain
+-har file(as json) is parsed, every entry in log is parsed
+-from each entry url is retrived through request
+- the domain is extracted from url
+-the following comparisons are made
+		- if domain is not current domain(3rd party)
+		- if domain already present in list of 3rd party domains(subdomains with same domain)
+		- if the domain isn't empty
+- if all are satisfied, the domain is added to list of 3rd part domains	
+
+
+- each thord party domain has an edge connecting that domain and the current domain
+
+
+How to execute:
+[syntax] python file_name.py 'path_of_har_file' 'domain of site to ehich the har file belongs to' 
+
+1. python third_part_domain_connectivity.py G:\Privacy\hw3\macys2.har macys.com
+
+2. python third_part_domain_connectivity.py G:\Privacy\hw3\cnn2.har cnn.com
+
+3. python third_part_domain_connectivity.py G:\Privacy\hw3\bofa.har bankofamerica.com
