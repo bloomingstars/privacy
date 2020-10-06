@@ -1,0 +1,29 @@
+README(q5):
+
+What the program does:
+
+	- List the top 5 country codes hosting Tor relays 
+	- List the top 5 relays with maximum bandwidth-contributing 
+	- Venn diagram of 
+		-categories as guard, exit or middle relay.
+		-the number of relays for each category
+		- the cumulative bandwidth for each category.
+
+How it does:
+parse file tor.csv, append headers to header list
+
+3 functions are defined.
+	- first_five( top 5 country codes hosting Tor relays )
+		-count number of times country code appears
+	- first_five_bw(top 5 relays with maximum bandwidth-contributing )
+		-sort and reverse bandwidth measure
+	- ven(Venn diagram of categories)
+			exit_r: values for exit relay across all rows
+			exit_no: count of number of exit relays
+			exit_no_bw: cumulative consensus bw
+		sIMILARLY FOR entry, mid and entry cum exit relays
+
+How to execute:
+[syntax] python file_name.py 
+
+1.python tor_framework_analysis.py
