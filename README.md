@@ -1,10 +1,10 @@
 # privacy
 
 # Original Netflix IMDB denonymization attack :
- hw1 
+  
 	Given the anonymized Netflix Database and Publicly available IMDb ratings.
 	Using the IMBD ratings as auxiliary information, and using a weighted scoring algorithm
-	A user's details can be de-anonymizes
+	A user's details can be de-anonymized @ hw1
 	
 	
    
